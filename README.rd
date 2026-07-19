@@ -20,5 +20,5 @@ A professional, modern, and fully responsive luxury resort landing page built fr
 - Vercel: Cloud host production deployment.
 
 5. link
-- github: 
-- vercel: 
+- github: https://github.com/piseysren/piras-luxury-resort.git
+- vercel: https://piras-luxury-resort.vercel.app/
