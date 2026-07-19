@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siras Luxury Resort</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        cursive: ['Alex Brush', 'cursive'],
+                    },
+                    colors: {
+                        primary: '#E23E3E',
+                        navy: '#0A1428', 
+                        'navy-light': '#0f1b35',
+                    }
+                }
+            }
+        };
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-navy dark:text-slate-100 font-sans antialiased transition-colors duration-300">
+
+<!-- Navigation bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-transparent py-4 transition-all duration-300 z-[9999]">
+        <div class="max-w-7xl mx-auto bg-navy/95 backdrop-blur-md border border-white/10 shadow-lg rounded-2xl px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="#" class="text-2xl font-serif font-bold text-white tracking-widest uppercase">Siras Luxury</a>
+            </div>
+
+            <!-- Desktop Menu Links -->
+            <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wider">
+                <a href="#" class="text-primary transition">Home</a>
+                <a href="#about" class="text-white/80 hover:text-white transition">About</a>
+                <a href="#rooms" class="text-white/80 hover:text-white transition">Rooms</a>
+                <a href="#features" class="text-white/80 hover:text-white transition">Features</a>
+                <a href="#contact" class="text-white/80 hover:text-white transition">Contact</a>
+            </div>
+
+            <!-- Dark Mode Toggle (Desktop) -->
+            <div class="hidden md:block">
+                <button id="theme-toggle" class="bg-white/10 hover:bg-white/25 border border-white/20 text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300 shadow-md focus:outline-none">
+                    <i id="theme-toggle-icon" class="fa-solid fa-moon text-base text-white"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Bar Right -->
+            <div class="md:hidden flex items-center gap-4">
+                <button id="theme-toggle-mobile" class="bg-white/10 hover:bg-white/25 border border-white/20 text-white w-9 h-9 rounded-full flex items-center justify-center transition duration-300 shadow-md focus:outline-none">
+                    <i id="theme-toggle-icon-mobile" class="fa-solid fa-moon text-sm text-white"></i>
+                </button>
+                <button id="menu-toggle" class="text-white hover:text-primary transition focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden max-w-7xl mx-auto bg-navy border border-white/10 rounded-xl px-4 pt-2 pb-4 space-y-3 mt-2 mx-4 transition-all duration-300">
+            <a href="#" class="block text-primary text-sm font-semibold tracking-wider">Home</a>
+            <a href="#about" class="block text-white/80 hover:text-white text-sm font-semibold tracking-wider">About</a>
+            <a href="#rooms" class="block text-white/80 hover:text-white text-sm font-semibold tracking-wider">Rooms</a>
+            <a href="#features" class="block text-white/80 hover:text-white text-sm font-semibold tracking-wider">Features</a>
+            <a href="#contact" class="block text-white/80 hover:text-white text-sm font-semibold tracking-wider">Contact</a>
+        </div>
+    </nav>
+
+<!-- Hero Section -->
+    <section class="w-full bg-white dark:bg-navy pt-28 pb-6 transition-colors duration-300">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[380px] sm:h-[450px] rounded-2xl overflow-hidden shadow-lg">
+            <img src="Img/1.png" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-1 z-0">
+            <div class="absolute inset-0 bg-navy/30 z-5"></div>
+            <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-white font-medium tracking-wide leading-tight max-w-3xl">
+                    Relaxed in the Pure<br>Paradise
+                </h1>
+            </div>
+        </div>
+    </section>
+
+<!-- About us section -->
+    <section id="about" class="py-20 bg-white dark:bg-navy transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 relative">
+                <div class="overflow-hidden shadow-2xl rounded-lg">
+                    <img src="Img/2.png" alt="Resort Reception" class="w-full h-[450px] object-cover hover:scale-105 transition duration-700">
+                </div>
+            </div>
+            <div class="lg:col-span-7 space-y-6 pl-0 lg:pl-6">
+                <span class="text-4xl sm:text-5xl italic font-serif text-black dark:text-rose-400 mb-2 block">Welcome</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif text-navy dark:text-white font-bold tracking-wide leading-tight">
+                    Siras Luxury Resort
+                </h2>
+                <p class="text-base font-semibold tracking-wider text-gray-500 dark:text-slate-400 uppercase mt-2">
+                    Siemreap, Cambodia
+                </p>
+                <h3 class="text-base sm:text-lg font-bold tracking-widest text-navy dark:text-slate-200 uppercase mt-8 border-b border-gray-200 dark:border-slate-800 pb-3">
+                    A Gateway to Ultimate Coastal Relaxation
+                </h3>
+                <p class="text-gray-600 dark:text-slate-300 text-base md:text-lg leading-relaxed mt-4 font-light">
+                    Immerse yourself in a sanctuary of sophisticated luxury. Surrounded by breathtaking tropical scenery and rich cultural heritage, our resort offers a refined getaway where serene nature perfectly integrates with world-class modern elegance.
+                </p>
+            </div>
+        </div>
+    </section>
+
+<!-- Room section -->
+    <section id="rooms" class="py-20 bg-slate-50 dark:bg-navy transition-colors duration-300 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-2 mb-16">
+                <h2 class="text-4xl sm:text-5xl font-serif font-bold text-navy dark:text-white">Private Villas With Stunning Views</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Honeymoon Villa -->
+                <div class="bg-white dark:bg-navy-light shadow-lg overflow-hidden flex flex-col group border border-neutral-100 dark:border-slate-800 rounded-lg">
+                    <div class="flex relative">
+                        <div class="w-16 flex flex-col justify-between items-center bg-neutral-50 dark:bg-navy/50 border-r border-neutral-100 dark:border-slate-800 text-neutral-500 dark:text-slate-400 text-center text-[11px] font-medium pt-16 pb-4 relative">
+                            <div class="bg-primary text-white w-full py-2 absolute top-0 left-0 flex flex-col items-center justify-center min-h-[55px]">
+                                <span class="text-xs font-bold">$100</span>
+                                <span class="text-[8px] uppercase tracking-tighter opacity-80">/ Night</span>
+                            </div>
+                            <div class="space-y-4 w-full px-1">
+                                <div class="py-1"><i class="fa-solid fa-bed text-primary text-sm block mb-1"></i> 1 Bed</div>
+                                <div class="py-1"><i class="fa-solid fa-bath text-primary text-sm block mb-1"></i> 1 Bath</div>
+                                <div class="py-1"><i class="fa-solid fa-snowflake text-primary text-sm block mb-1"></i> AC</div>
+                                <div class="py-1"><i class="fa-solid fa-wifi text-primary text-sm block mb-1"></i> Wifi</div>
+                            </div>
+                        </div>
+                        <div class="flex-1 overflow-hidden relative">
+                            <img src="Img/3.png" alt="Honeymoon Villa" class="w-full h-[280px] object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-serif font-bold text-navy dark:text-white mb-2">Honeymoon Villa</h3>
+                            <p class="text-neutral-500 dark:text-slate-400 text-xs leading-relaxed font-light">An intimate oasis designed thoughtfully for romance, comfort, and peaceful tranquility.</p>
+                        </div>
+                        <a href="#" class="block text-center bg-primary hover:bg-red-700 text-white text-xs font-bold uppercase tracking-widest py-3 transition rounded">Check Availability</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Deluxe Suite -->
+                <div class="bg-white dark:bg-navy-light shadow-lg overflow-hidden flex flex-col group border border-neutral-100 dark:border-slate-800 rounded-lg">
+                    <div class="flex relative">
+                        <div class="w-16 flex flex-col justify-between items-center bg-neutral-50 dark:bg-navy/50 border-r border-neutral-100 dark:border-slate-800 text-neutral-500 dark:text-slate-400 text-center text-[11px] font-medium pt-16 pb-4 relative">
+                            <div class="bg-primary text-white w-full py-2 absolute top-0 left-0 flex flex-col items-center justify-center min-h-[55px]">
+                                <span class="text-xs font-bold">$120</span>
+                                <span class="text-[8px] uppercase tracking-tighter opacity-80">/ Night</span>
+                            </div>
+                            <div class="space-y-4 w-full px-1">
+                                <div class="py-1"><i class="fa-solid fa-bed text-primary text-sm block mb-1"></i> 1 Bed</div>
+                                <div class="py-1"><i class="fa-solid fa-bath text-primary text-sm block mb-1"></i> 1 Bath</div>
+                                <div class="py-1"><i class="fa-solid fa-snowflake text-primary text-sm block mb-1"></i> AC</div>
+                                <div class="py-1"><i class="fa-solid fa-wifi text-primary text-sm block mb-1"></i> Wifi</div>
+                            </div>
+                        </div>
+                        <div class="flex-1 overflow-hidden relative">
+                            <img src="Img/4.png" alt="Deluxe Suite" class="w-full h-[280px] object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-serif font-bold text-navy dark:text-white mb-2">Deluxe Suite</h3>
+                            <p class="text-neutral-500 dark:text-slate-400 text-xs leading-relaxed font-light">Experience standard luxury enhanced with premium spacing and elegant styling features.</p>
+                        </div>
+                        <a href="#" class="block text-center bg-primary hover:bg-red-700 text-white text-xs font-bold uppercase tracking-widest py-3 transition rounded">Check Availability</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Sea View Room -->
+                <div class="bg-white dark:bg-navy-light shadow-lg overflow-hidden flex flex-col group border border-neutral-100 dark:border-slate-800 rounded-lg">
+                    <div class="flex relative">
+                        <div class="w-16 flex flex-col justify-between items-center bg-neutral-50 dark:bg-navy/50 border-r border-neutral-100 dark:border-slate-800 text-neutral-500 dark:text-slate-400 text-center text-[11px] font-medium pt-16 pb-4 relative">
+                            <div class="bg-primary text-white w-full py-2 absolute top-0 left-0 flex flex-col items-center justify-center min-h-[55px]">
+                                <span class="text-xs font-bold">$150</span>
+                                <span class="text-[8px] uppercase tracking-tighter opacity-80">/ Night</span>
+                            </div>
+                            <div class="space-y-4 w-full px-1">
+                                <div class="py-1"><i class="fa-solid fa-bed text-primary text-sm block mb-1"></i> 2 Bed</div>
+                                <div class="py-1"><i class="fa-solid fa-bath text-primary text-sm block mb-1"></i> 1 Bath</div>
+                                <div class="py-1"><i class="fa-solid fa-snowflake text-primary text-sm block mb-1"></i> AC</div>
+                                <div class="py-1"><i class="fa-solid fa-wifi text-primary text-sm block mb-1"></i> Wifi</div>
+                            </div>
+                        </div>
+                        <div class="flex-1 overflow-hidden relative">
+                            <img src="Img/5.png" alt="Sea View Room" class="w-full h-[280px] object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-serif font-bold text-navy dark:text-white mb-2">Sea View Room</h3>
+                            <p class="text-neutral-500 dark:text-slate-400 text-xs leading-relaxed font-light">Wake up directly to stunning panoramic open sea scenery right outside your glass door.</p>
+                        </div>
+                        <a href="#" class="block text-center bg-primary hover:bg-red-700 text-white text-xs font-bold uppercase tracking-widest py-3 transition rounded">Check Availability</a>
+                    </div>
+                </div>
+    </section>
+<!-- Activity section -->
+    <section id="activities" class="py-20 bg-white dark:bg-navy text-slate-950 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-16">
+                <h2 class="text-4xl sm:text-5xl font-serif font-bold tracking-wide text-navy dark:text-white">Activities</h2>
+                <span class="text-1xl sm:text-2xl lg:text-3xl font-serif text-navy dark:text-white font-bold tracking-wide leading-tight">
+                Dive Into Island Adventures</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-50 dark:bg-navy-light border border-slate-100 dark:border-white/5 rounded-xl shadow-md flex flex-col items-center text-center group hover:shadow-xl hover:border-primary/20 transition-all duration-300 overflow-hidden pb-8">
+                    <div class="w-full h-48 overflow-hidden bg-slate-200 dark:bg-navy relative">
+                        <img src="Img/7.png" alt="Food & Restaurant" class="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition duration-700">
+                        <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold mt-6 mb-3 text-navy dark:text-white">Food & Restaurant</h3>
+                    <div class="w-12 h-[1px] bg-primary/40 mb-4 transition-all duration-300 group-hover:w-20"></div>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs px-6 leading-relaxed font-light">Enjoy delicious local and Western food made by our best chefs.</p>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-navy-light border border-slate-100 dark:border-white/5 rounded-xl shadow-md flex flex-col items-center text-center group hover:shadow-xl hover:border-primary/20 transition-all duration-300 overflow-hidden pb-8">
+                    <div class="w-full h-48 overflow-hidden bg-slate-200 dark:bg-navy relative">
+                        <img src="Img/8.png" alt="Beauty & Health" class="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition duration-700">
+                        <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold mt-6 mb-3 text-navy dark:text-white">Beauty & Health</h3>
+                    <div class="w-12 h-[1px] bg-primary/40 mb-4 transition-all duration-300 group-hover:w-20"></div>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs px-6 leading-relaxed font-light">Relax your mind and body with our wonderful spa and massage treatments.</p>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-navy-light border border-slate-100 dark:border-white/5 rounded-xl shadow-md flex flex-col items-center text-center group hover:shadow-xl hover:border-primary/20 transition-all duration-300 overflow-hidden pb-8">
+                    <div class="w-full h-48 overflow-hidden bg-slate-200 dark:bg-navy relative">
+                        <img src="Img/9.png" alt="Fitness Center" class="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition duration-700">
+                        <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold mt-6 mb-3 text-navy dark:text-white">Fitness Center</h3>
+                    <div class="w-12 h-[1px] bg-primary/40 mb-4 transition-all duration-300 group-hover:w-20"></div>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs px-6 leading-relaxed font-light">Keep exercising and stay healthy in our modern gym.</p>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-navy-light border border-slate-100 dark:border-white/5 rounded-xl shadow-md flex flex-col items-center text-center group hover:shadow-xl hover:border-primary/20 transition-all duration-300 overflow-hidden pb-8">
+                    <div class="w-full h-48 overflow-hidden bg-slate-200 dark:bg-navy relative">
+                        <img src="Img/10.png" alt="Event Rooms" class="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition duration-700">
+                        <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold mt-6 mb-3 text-navy dark:text-white">Event Rooms</h3>
+                    <div class="w-12 h-[1px] bg-primary/40 mb-4 transition-all duration-300 group-hover:w-20"></div>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs px-6 leading-relaxed font-light">Perfect spaces for your private parties, business meetings, and big events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Feature section -->
+    <section id="features" class="py-20 bg-slate-50 dark:bg-navy-light text-slate-950 transition-colors duration-300">
+        <style>
+            @keyframes marquee-contained {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-100% / 2)); }
+            }
+            .marquee-inner {
+                display: flex;
+                width: max-content;
+                animation: marquee-contained 20s linear infinite;
+            }
+            .marquee-inner:hover {
+                animation-play-state: paused;
+            }
+        </style>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-12">
+                <h2 class="text-4xl sm:text-5xl font-serif font-bold tracking-wide text-navy dark:text-white">Feature</h2>
+                <span class="text-1xl sm:text-2xl lg:text-3xl font-serif text-navy dark:text-white font-bold tracking-wide leading-tight">
+                Relax, Refresh, Renew.</span>
+                <p class="text-slate-500 dark:text-slate-400 text-sm max-w-2xl mx-auto font-light leading-relaxed">
+                    Experience a sanctuary of sophisticated luxury, where world-class hospitality meets ultimate tranquility.
+                </p>
+            </div>
+
+            <div class="w-full overflow-hidden rounded-2xl bg-white dark:bg-navy p-6 shadow-sm border border-slate-100 dark:border-white/5">
+                <div class="marquee-inner gap-6">
+                    <!-- Group 1 -->
+                    <div class="w-[260px] bg-slate-50 dark:bg-navy-light border border-slate-100 dark:border-white/5 rounded-xl flex flex-col items-center text-center group hover:shadow-md transition-all duration-300 overflow-hidden pb-6 flex-shrink-0">
+                        <div class="w-full h-40 overflow-hidden bg-slate-200 dark:bg-navy relative">
+                            <img src="Img/11.png" alt="Pick & Drop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="text-primary mt-4 text-xl"><i class="fa-solid fa-car"></i></div>
+                        <h3 class="text-base font-serif font-bold mt-2 mb-2 text-navy dark:text-white">Pick & Drop Facility</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-[11px] px-4 font-light leading-relaxed">Arrive in style and comfort with our premium transfer service.</p>
+                    </div>
+
+                    <div class="w-[260px] bg-slate-50 dark:bg-navy-light border border-slate-100 dark:border-white/5 rounded-xl flex flex-col items-center text-center group hover:shadow-md transition-all duration-300 overflow-hidden pb-6 flex-shrink-0">
+                        <div class="w-full h-40 overflow-hidden bg-slate-200 dark:bg-navy relative">
+                            <img src="Img/12.png" alt="Breakfast" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="text-primary mt-4 text-xl"><i class="fa-solid fa-hamburger"></i></div>
+                        <h3 class="text-base font-serif font-bold mt-2 mb-2 text-navy dark:text-white">Breakfast Included</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-[11px] px-4 font-light leading-relaxed">Start your morning with a gourmet culinary journey.</p>
+                    </div>
+
+                    <div class="w-[260px] bg-slate-50 dark:bg-navy-light border border-slate-100 dark:border-white/5 rounded-xl flex flex-col items-center text-center group hover:shadow-md transition-all duration-300 overflow-hidden pb-6 flex-shrink-0">
+                        <div class="w-full h-40 overflow-hidden bg-slate-200 dark:bg-navy relative">
+                            <img src="Img/13.png" alt="Wifi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="text-primary mt-4 text-xl"><i class="fa-solid fa-wifi"></i></div>
+                        <h3 class="text-base font-serif font-bold mt-2 mb-2 text-navy dark:text-white">High Speed Wifi</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-[11px] px-4 font-light leading-relaxed">Stay seamlessly connected throughout the entire resort.</p>
+                    </div>
+
+                    <div class="w-[260px] bg-slate-50 dark:bg-navy-light border border-slate-100 dark:border-white/5 rounded-xl flex flex-col items-center text-center group hover:shadow-md transition-all duration-300 overflow-hidden pb-6 flex-shrink-0">
+                        <div class="w-full h-40 overflow-hidden bg-slate-200 dark:bg-navy relative">
+                            <img src="Img/14.png" alt="Pool" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="text-primary mt-4 text-xl"><i class="fa-solid fa-swimming-pool"></i></div>
+                        <h3 class="text-base font-serif font-bold mt-2 mb-2 text-navy dark:text-white">Swimming Pool</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-[11px] px-4 font-light leading-relaxed">Unwind and soak up the sun by our stunning infinity pool.</p>
+                    </div>
+
+                    <!-- Group 2 (Duplicate for Seamless Loop) -->
+                    <div class="w-[260px] bg-slate-50 dark:bg-navy-light border border-slate-100 dark:border-white/5 rounded-xl flex flex-col items-center text-center group hover:shadow-md transition-all duration-300 overflow-hidden pb-6 flex-shrink-0">
+                        <div class="w-full h-40 overflow-hidden bg-slate-200 dark:bg-navy relative">
+                            <img src="Img/11.png" alt="Pick & Drop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="text-primary mt-4 text-xl"><i class="fa-solid fa-car"></i></div>
+                        <h3 class="text-base font-serif font-bold mt-2 mb-2 text-navy dark:text-white">Pick & Drop Facility</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-[11px] px-4 font-light leading-relaxed">Arrive in style and comfort with our premium transfer service.</p>
+                    </div>
+
+                    <div class="w-[260px] bg-slate-50 dark:bg-navy-light border border-slate-100 dark:border-white/5 rounded-xl flex flex-col items-center text-center group hover:shadow-md transition-all duration-300 overflow-hidden pb-6 flex-shrink-0">
+                        <div class="w-full h-40 overflow-hidden bg-slate-200 dark:bg-navy relative">
+                            <img src="Img/12.png" alt="Breakfast" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="text-primary mt-4 text-xl"><i class="fa-solid fa-hamburger"></i></div>
+                        <h3 class="text-base font-serif font-bold mt-2 mb-2 text-navy dark:text-white">Breakfast Included</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-[11px] px-4 font-light leading-relaxed">Start your morning with a gourmet culinary journey.</p>
+                    </div>
+
+                    <div class="w-[260px] bg-slate-50 dark:bg-navy-light border border-slate-100 dark:border-white/5 rounded-xl flex flex-col items-center text-center group hover:shadow-md transition-all duration-300 overflow-hidden pb-6 flex-shrink-0">
+                        <div class="w-full h-40 overflow-hidden bg-slate-200 dark:bg-navy relative">
+                            <img src="Img/13.png" alt="Wifi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="text-primary mt-4 text-xl"><i class="fa-solid fa-wifi"></i></div>
+                        <h3 class="text-base font-serif font-bold mt-2 mb-2 text-navy dark:text-white">High Speed Wifi</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-[11px] px-4 font-light leading-relaxed">Stay seamlessly connected throughout the entire resort.</p>
+                    </div>
+
+                    <div class="w-[260px] bg-slate-50 dark:bg-navy-light border border-slate-100 dark:border-white/5 rounded-xl flex flex-col items-center text-center group hover:shadow-md transition-all duration-300 overflow-hidden pb-6 flex-shrink-0">
+                        <div class="w-full h-40 overflow-hidden bg-slate-200 dark:bg-navy relative">
+                            <img src="Img/14.png" alt="Pool" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="text-primary mt-4 text-xl"><i class="fa-solid fa-swimming-pool"></i></div>
+                        <h3 class="text-base font-serif font-bold mt-2 mb-2 text-navy dark:text-white">Swimming Pool</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-[11px] px-4 font-light leading-relaxed">Unwind and soak up the sun by our stunning infinity pool.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Contact section -->
+    <section id="contact" class="py-20 bg-white dark:bg-navy transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <div>
+                    <h2 class="text-4xl font-serif font-bold text-slate-900 dark:text-white mb-6">Contact Us</h2>
+                    <p class="text-slate-600 dark:text-slate-400 mb-8">Have questions or want to secure your luxury villa? Reach out directly to our booking office or fill out the inquiry form.</p>
+                    
+                    <div class="flex flex-col gap-6">
+                        <a href="mailto:srenpiseysp@gmail.com" class="flex items-center gap-4 text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-primary transition-all duration-200">
+                            <i class="fas fa-envelope text-2xl text-primary w-8 text-center"></i>
+                            <span>srenpiseysp@gmail.com</span>
+                        </a>
+                        <a href="https://t.me/SrenPisey" target="_blank" class="flex items-center gap-4 text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-blue-500 transition-all duration-200">
+                            <i class="fab fa-telegram text-2xl text-blue-500 w-8 text-center"></i>
+                            <span>Telegram Booking Support</span>
+                        </a>
+                        <a href="https://www.facebook.com/sren.pisey.Pi" target="_blank" class="flex items-center gap-4 text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-blue-700 transition-all duration-200">
+                            <i class="fab fa-facebook text-2xl text-blue-700 w-8 text-center"></i>
+                            <span>Official Facebook Page</span>
+                        </a>
+                        <a href="https://share.google/PpoSEk6T3Sq8AhV05" target="_blank" class="flex items-center gap-4 text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-primary transition-all duration-200">
+                            <i class="fas fa-map-marker-alt text-2xl text-primary w-8 text-center"></i>
+                            <span>Siemreap, Cambodia</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form Block -->
+                <div class="bg-slate-50 dark:bg-navy-light p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-lg transition-colors duration-300">
+                    <form class="space-y-5">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">Name</label>
+                            <input type="text" required class="w-full px-4 py-2.5 border border-slate-200 dark:border-slate-700 bg-white dark:bg-navy text-slate-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">Email</label>
+                            <input type="email" required class="w-full px-4 py-2.5 border border-slate-200 dark:border-slate-700 bg-white dark:bg-navy text-slate-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">Inquiry Details</label>
+                            <textarea rows="4" required class="w-full px-4 py-2.5 border border-slate-200 dark:border-slate-700 bg-white dark:bg-navy text-slate-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white font-medium py-3 rounded-lg hover:bg-red-700 transition shadow-md">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+<!-- Footer -->
+    <footer class="py-5 bg-navy border-t border-white/10 text-white text-center">
+        <p class="text-sm font-medium">&copy; 2026 Piras Luxury Resort. Built by PISEY. All rights reserved.</p>
+    </footer>
+    <script src="javascripts.js"></script>
+</body>
+</html>
